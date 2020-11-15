@@ -1,8 +1,8 @@
 <template>
     <el-menu
-      background-color="#fbfaf5"
-      text-color="#203744"
-      active-text-color="#cd5e3c"
+      background-color="#fff"
+      text-color="#969799"
+      active-text-color="#498FD9"
       :unique-opened="true"
       :collapse="$store.state.menu.collapse"
       :collapse-transition="false"

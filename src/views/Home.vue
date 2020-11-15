@@ -13,7 +13,7 @@
 
           <el-dropdown @command="handleChange">
             <el-button type="text">
-              <span style="margin-right: 40px;display: flex;justify-content: space-between; align-items: center; font-size: 14px">
+              <span style="margin-right: 40px;display: flex;justify-content: space-between; align-items: center; font-size: 14px; color: #fff">
                欢迎您！{{USER.name}}
               </span>
             </el-button>
@@ -181,7 +181,7 @@ export default {
   height: 100%;
 }
 .el-header{
-  background-color: #203744;
+  background-color: #488ED9;
   display: flex;
   justify-content: space-between;
   align-items: center;
