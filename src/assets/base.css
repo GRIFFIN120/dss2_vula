@@ -1,0 +1,78 @@
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+.el-menu-item-group__title{
+  padding: 0px;
+}
+/*菜单递归带来的根div样式问题*/
+.el-menu--collapse > div > .el-submenu > .el-submenu__title .el-submenu__icon-arrow {
+  display: none;
+}
+.el-menu--collapse > div > .el-submenu > .el-submenu__title span {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  visibility: hidden;
+  display: inline-block;
+}
+
+/*树形控件选中时颜色调整*/
+.el-tree-node.is-current > .el-tree-node__content {
+  background-color: #fddea5 !important;
+}
+
+
+/*高德地图*/
+.amap-copyright, .amap-logo{
+  display: none!important;
+}
+
+
+.el-tooltip__popper {
+  max-width: 400px;
+}
+
+
+.el-drawer__header span:focus {
+  outline: 0;
+}
+
+.treeNode{
+  font-weight: bolder;
+  text-shadow: 3px 3px 3px #cbb994;
+}
+.treeLeaf{
+  font-weight: bolder;
+  text-shadow: 2px 2px 2px #cccccc;
+}
+/*去处表格悬停背景色*/
+/*.el-table--enable-row-hover .el-table__body tr:hover>td{*/
+/*  background-color: #212e3e !important;*/
+/*}*/
+
+
+.ck-content {
+  min-height: 500px;
+}
+
+.drawer{
+  padding: 10px;
+}
+
+
+
+input[disabled],input:disabled,input.disabled{
+  color: #abc;
+  -webkit-text-fill-color:#999;
+  -webkit-opacity:0;
+  opacity: 1;
+  background: #efefef !important;
+  border: 0px;
+  border-bottom: 1px solid #eeeeee;
+}
