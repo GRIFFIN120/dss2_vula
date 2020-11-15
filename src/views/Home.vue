@@ -1,11 +1,11 @@
 <template>
     <el-container class="home-container">
-      <el-header >
+      <el-header height="56px">
 
         <div>
           <!--  标题        -->
-          <div><img src="../assets/logo.png"></div>
-          <span style="cursor: pointer; margin-left: 10px;  font-size: 27px; font-weight: bolder" @click="$router.push('/welcome')">
+<!--          <div><img src="../assets/logo.png"></div>-->
+          <span style="cursor: pointer; margin-left: 0px;  font-size: 18px; font-weight: bolder" @click="$router.push('/welcome')">
             {{$settings.title}}</span>
         </div>
 
@@ -188,8 +188,6 @@ export default {
   align-items: center;
   color: #fff;
   font-size: 20px;
-  border-top: 1px solid #203744;
-  border-bottom: 1px solid #203744;
   > div {
     display: flex;
   }
