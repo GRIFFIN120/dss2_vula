@@ -8,6 +8,7 @@
     "lint": "node_modules/.bin/vue-cli-service lint"
   },
   "dependencies": {
+    "@amcharts/amcharts4": "^4.10.11",
     "@ckeditor/ckeditor5-build-decoupled-document": "^23.1.0",
     "axios": "^0.20.0",
     "core-js": "^3.6.5",
