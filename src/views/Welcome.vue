@@ -8,11 +8,12 @@
     </BaseDialog>
 
     <el-row>
-      <el-col align="center" style="margin-bottom: 20px"> <h2>页岩气开发群决策案例</h2></el-col>
-      <hr>
+      <el-col align="center" >
+          <h2>页岩气开发群决策案例</h2>
+      </el-col>
       <template v-for="task in tasks">
-        <el-col :key="task.id" :span="8">
-          <el-card >
+        <el-col :key="task.id" :span="8" style="padding: 10px">
+          <el-card style="background-color: #eee">
             <ResultChart :userId="task.user.id" :nodeId="0" :data="task"></ResultChart>
             <div style="text-align: right">
                创建人：{{task.user.name}}

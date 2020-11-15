@@ -7,7 +7,7 @@
         </el-col></el-row>
 
 <!--      <div class="login-avatar">-->
-<!--        <img src="../assets/logo.png">-->
+<!--        <img src="../assets/favicon.ico">-->
 <!--      </div>-->
       <el-form ref="loginFormRef"
                :model="loginForm"
