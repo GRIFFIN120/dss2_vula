@@ -2,13 +2,17 @@
   <div class="login-container">
     <div class="login-box">
 
-        <el-row ><el-col align="center" style="padding-top: 25px">
-          <h2>{{$settings.title}}</h2>
-        </el-col></el-row>
+        <el-row justify="space-between" style="margin-top: 20px">
+          <el-col :span="4" >
+            <div class="login-avatar">
+              <img src="../assets/logo.png">
+            </div>
+          </el-col>
+          <el-col :span="20" align="center" >
+            <h2>{{$settings.title}}</h2>
+          </el-col>
+        </el-row>
 
-<!--      <div class="login-avatar">-->
-<!--        <img src="../assets/favicon.ico">-->
-<!--      </div>-->
       <el-form ref="loginFormRef"
                :model="loginForm"
                :rules="loginRules"
@@ -110,15 +114,17 @@ export default {
     top: 50%;
     transform: translate(-50%,-50%);
     .login-avatar{
-      width: 130px;
-      height: 130px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
-      border: 1px solid #aaa;
-      padding: 10px;
-      box-shadow: 0 0 10px;
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%,-50%);
+      margin-top: 10px;
+      margin-left: 20px;
+      /*border: 1px solid #aaa;*/
+      /*padding: 10px;*/
+      /*box-shadow: 0 0 10px;*/
+      /*position: absolute;*/
+      /*left: 50%;*/
+      /*transform: translate(-50%,-50%);*/
       background-color: #fff;
       img{
         width: 100%;

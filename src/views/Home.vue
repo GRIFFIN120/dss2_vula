@@ -4,7 +4,8 @@
 
         <div>
           <!--  标题        -->
-          <span style="cursor: pointer" @click="$router.push('/welcome')">
+          <div><img src="../assets/logo.png"></div>
+          <span style="cursor: pointer; margin-left: 10px;  font-size: 27px; font-weight: bolder" @click="$router.push('/welcome')">
             {{$settings.title}}</span>
         </div>
 
