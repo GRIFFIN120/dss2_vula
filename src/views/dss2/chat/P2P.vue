@@ -91,7 +91,7 @@ export default {
         })
     },
     connection (uid) {
-      const socket = new SockJS('http://192.168.1.20:8001/endpointSang')
+      const socket = new SockJS('http://120.27.61.185:8002/endpointSang')
       this.stompClient = Stomp.over(socket)
       const headers = {
         name: uid

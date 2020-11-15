@@ -20,7 +20,6 @@ export default {
         page: 1,
         size: 0,
         exact: {
-          domain: 'dss2'
         },
         fuzzy: {}
       }
@@ -31,7 +30,7 @@ export default {
       const keys = this.$refs.tree.getCheckedKeys()
       const arr = []
       keys.filter(function (e) {
-        arr.push({ id: e, domain: 'npims' })
+        arr.push({ id: e })
       })
 
       this.$base.http.post('menu/update/all', arr)

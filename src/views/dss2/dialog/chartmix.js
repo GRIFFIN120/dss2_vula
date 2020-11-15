@@ -3,6 +3,8 @@ import * as am4charts from '@amcharts/amcharts4/charts'
 import am4themesAnimated from '@amcharts/amcharts4/themes/animated'
 import am4themesKelly from '@amcharts/amcharts4/themes/kelly'
 
+import am4langCn from '@amcharts/amcharts4/lang/zh_Hans'
+
 am4core.useTheme(am4themesKelly)
 am4core.useTheme(am4themesAnimated)
 am4core.options.commercialLicense = true
@@ -65,15 +67,17 @@ export default {
       return series
     },
 
-    getXAxis () {
+    getXAxis (chart) {
       if (this.data.domain === 'series') {
-        const axis = new am4charts.DateAxis()
-        axis.dateFormats.setKey('day', 'yyyy/MM/dd')
+        const axis = chart.xAxes.push(new am4charts.DateAxis())
+        axis.renderer.labels.template.rotation = -50
         return axis
       } else if (this.data.domain === 'number') {
-        return new am4charts.ValueAxis()
+        const axis = chart.xAxes.push(new am4charts.ValueAxis())
+        return axis
       } else {
-        return new am4charts.CategoryAxis()
+        const axis = chart.xAxes.push(new am4charts.CategoryAxis())
+        return axis
       }
     },
     makeChart (ref) {
@@ -85,8 +89,9 @@ export default {
       const chart = am4core.create(ref, am4charts.XYChart)
       this.chart = chart
       chart.data = this.list
-      let xAxis = this.getXAxis()
-      xAxis = chart.xAxes.push(xAxis)
+      chart.language.locale = am4langCn
+
+      const xAxis = this.getXAxis(chart)
 
       xAxis.dataFields.category = 'category'
       xAxis.renderer.grid.template.location = 0

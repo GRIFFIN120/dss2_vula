@@ -49,7 +49,7 @@ const mutations = {
 const actions = {
   getMenu (context, user) {
     if (user === undefined) {
-      const search = { exact: { domain: 'dss2' } }
+      const search = { }
       return base.tree('menu', search)
         .then(res => {
           const arr = res.data
