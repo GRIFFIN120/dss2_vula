@@ -194,15 +194,15 @@ export default {
   }
 }
 .el-aside{
-  background-color: #fbfaf5;
+  background-color: #ffffff;
   border-right: 1px solid #cbb994;
   border-bottom: 1px solid #cbb994;
 }
 .el-main{
-  background-color: #eae5e3;
+  background-color: #f1ebeb;
 }
 .el-footer{
-  background-color: #203744;
+  background-color: #488ED9;
   border-top: 1px solid #203744;
   border-bottom: 1px solid #203744;
 }
