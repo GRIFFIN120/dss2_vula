@@ -3,7 +3,7 @@ import { Message, Loading } from 'element-ui'
 
 let loading = null
 const instance = axios.create({
-  timeout: 5000
+  timeout: 30000
 })
 
 instance.interceptors.request.use(config => {
