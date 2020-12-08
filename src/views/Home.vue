@@ -19,9 +19,9 @@
               </span>
             </el-button>
             <el-dropdown-menu  slot="dropdown">
-              <el-dropdown-item command="userProfile">个人信息</el-dropdown-item>
-              <el-dropdown-item command="changePassword">修改密码</el-dropdown-item>
-              <el-dropdown-item divided command="userLogout">登出系统</el-dropdown-item>
+<!--              <el-dropdown-item command="userProfile">个人信息</el-dropdown-item>-->
+<!--              <el-dropdown-item command="changePassword">修改密码</el-dropdown-item>-->
+              <el-dropdown-item  command="userLogout">登出系统</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </div>
@@ -141,7 +141,7 @@ export default {
       }).then(() => {
         this.$cookies.remove('USER')
         this.$cookies.remove('TOKEN')
-        this.$router.push('/')
+        document.location.href = 'http://123.56.15.69/shalegas/index'
       }).catch(() => {})
     },
     userProfile () {

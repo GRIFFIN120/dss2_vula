@@ -18,15 +18,15 @@
                :rules="loginRules"
                label-width="60px" class="login-form">
         <el-form-item prop="username" label="邮箱">
-          <el-input v-model="loginForm.username" prefix-icon="fa fa-envelope"  placeholder="请输入用户名" ></el-input>
+          <el-input v-model="loginForm.username" disabled prefix-icon="fa fa-envelope"  placeholder="请输入用户名" ></el-input>
         </el-form-item>
         <el-form-item prop="password" label="密码">
-          <el-input v-model="loginForm.password" prefix-icon="fa fa-lock" placeholder="请输入密码" type="password"  show-password></el-input>
+          <el-input v-model="loginForm.password" disabled prefix-icon="fa fa-lock" placeholder="请输入密码" type="password"  show-password></el-input>
         </el-form-item>
         <el-form-item class="btns">
 
-          <el-button style="margin-right: 18px" :disabled="loading" type="text" @click="$refs.signup.open()" >注册</el-button>
-          <el-button :loading="loading" type="success" @click.native.prevent="submitLoginForm" >登录</el-button>
+          <el-button style="margin-right: 18px" :disabled="true" type="text" @click="$refs.signup.open()" >注册</el-button>
+          <el-button :loading="loading" :disabled="true" type="success" @click.native.prevent="submitLoginForm" >登录</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -72,7 +72,50 @@ export default {
       loading: false
     }
   },
+  mounted () {
+    const url = window.location.href
+    const obj = this.$utils.getQueryObject(url)
+    const token = obj.token
+    if (token) {
+      this.$cookies.set('TOKEN', token)
+      this.$base.auth(token)
+        .then(res => {
+          if (res.code !== 200) {
+            this.statusError()
+          } else {
+            this.checkStatus(res.data)
+          }
+        })
+    } else {
+      this.statusError()
+    }
+  },
   methods: {
+
+    checkStatus (data) {
+      const user = {
+        username: data.email,
+        name: data.name,
+        affiliation: data.deptName,
+        phone: data.phone
+      }
+      this.$base.http.post('user/checkLocal', user)
+        .then(res => {
+          this.$cookies.set('UID', res.data.id)
+
+          this.$router.push('/home')
+        })
+    },
+
+    statusError () {
+      this.$alert('用户未登录或登录状态已失效，请重新登录。', '重新登录', {
+        confirmButtonText: '确定',
+        callback: action => {
+          document.location.href = 'http://123.56.15.69/shalegas/login'
+        }
+      })
+    },
+
     submitLoginForm () {
       this.$refs.loginFormRef.validate(valid => {
         if (valid) {

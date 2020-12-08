@@ -41,6 +41,19 @@ const dfs = {
   }
 }
 
+const auth = function (token) {
+  const url = 'shalegas/api/userInfo'
+  return request({
+    baseURL: 'http://123.56.15.69',
+    url,
+    method: 'get',
+    headers: {
+      'content-type': 'application/json',
+      Authorization: 'Bearer ' + token
+    }
+  })
+}
+
 const http = {
   get0: function (url, params) {
     return request({
@@ -192,7 +205,8 @@ const base = {
   meta,
   operation,
   dfs,
-  BaseURL
+  BaseURL,
+  auth
 }
 
 export default base

@@ -26,7 +26,8 @@ module.exports = {
   devServer: {
     proxy: {
       '/api': {
-        target: 'http://120.27.61.185:8002', //
+        // target: 'http://120.27.61.185:8002', //
+        target: 'http://localhost:8002', //
         ws: true, // websockets
         changeOrigin: true,
         pathRewrite: {
@@ -39,6 +40,13 @@ module.exports = {
         changeOrigin: true,
         pathRewrite: {
           '^/dfs': ''
+        }
+      },
+      '/auth': {
+        target: 'http://123.56.15.69', //
+        changeOrigin: true,
+        pathRewrite: {
+          '^/auth': ''
         }
       }
       // '/cycle': {
