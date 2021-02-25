@@ -4,7 +4,7 @@
 
         <el-row justify="space-between" style="margin-top: 20px">
           <el-col :span="4" >
-            <div class="login-avatar">
+            <div v-show="false" class="login-avatar">
               <img src="../assets/logo.png">
             </div>
           </el-col>
