@@ -44,7 +44,7 @@ const dfs = {
 const auth = function (token) {
   const url = 'shalegas/api/userInfo'
   return request({
-    baseURL: 'http://123.56.15.69',
+    baseURL: 'http://59.110.0.232:9000',
     url,
     method: 'get',
     headers: {

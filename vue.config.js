@@ -43,7 +43,7 @@ module.exports = {
         }
       },
       '/auth': {
-        target: 'http://123.56.15.69', //
+        target: 'http://59.110.0.232:9000', //
         changeOrigin: true,
         pathRewrite: {
           '^/auth': ''

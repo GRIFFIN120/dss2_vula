@@ -141,7 +141,7 @@ export default {
       }).then(() => {
         this.$cookies.remove('USER')
         this.$cookies.remove('TOKEN')
-        document.location.href = 'http://123.56.15.69/shalegas/index'
+        document.location.href = 'http://59.110.0.232:9000/shalegas/index'
       }).catch(() => {})
     },
     userProfile () {

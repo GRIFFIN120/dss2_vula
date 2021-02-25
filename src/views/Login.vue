@@ -111,7 +111,7 @@ export default {
       this.$alert('用户未登录或登录状态已失效，请重新登录。', '重新登录', {
         confirmButtonText: '确定',
         callback: action => {
-          document.location.href = 'http://123.56.15.69/shalegas/login'
+          document.location.href = 'http://59.110.0.232:9000/shalegas/login'
         }
       })
     },
